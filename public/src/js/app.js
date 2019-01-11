@@ -3,3 +3,10 @@ if ("serviceWorker" in navigator) {
     console.log("Service worker registerd");
   });
 }
+
+window.addEventListener("beforeintallpromp", event => {
+  console.log("before intstall fired");
+  event.preventDefault();
+  deferredPrompt = event;
+  return false;
+});
